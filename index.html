@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Challenge 2 - Deyon Hira</title>
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+</head>
+
+<body>
+    <div>
+        <article>
+            <div id="clock"></div>
+        </article>
+        <article>
+            <div id="wrapper"></div>
+        </article>
+    </div>
+    <script src="./script.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            var today = new Date();
+            var hourNow = today.getHours();
+            var script = document.getElementById('groet');
+
+            if (hourNow < 12) {
+
+                var ochtend = ['ochtend'];
+                $('#wrapper').each(function(i, val) {
+                    $(this).addClass(ochtend[i]);
+                });
+
+
+
+            } else if (hourNow => 12 && hourNow <= 24) {
+
+                var avond = ['avond'];
+                $('#wrapper').each(function(i, val) {
+                    $(this).addClass(avond[i]);
+                });
+
+            } else {
+                alert("Tijd onbekend");
+            }
+
+
+        });
+
+    </script>
+
+</body>
+
+</html>
